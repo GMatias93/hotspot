@@ -26,7 +26,7 @@ angular.module('app')
         $scope.userPost.imageURI = "data:image/jpeg;base64," + imageData;
       }, function(err) {
         // An error occured. Show a message to the user
-        console.log('error', err);
+        console.log('There was an error: ', err);
         $state.go('main.home'); //this causes a home refresh, which may not be necessary
       });
   };
@@ -51,7 +51,6 @@ angular.module('app')
       }
     };
 
-    console.log('this is the userPost being posted', $scope.userPost);
     $ionicLoading.show({
       template: 'Posting you photo, please-wait...',
       animation: 'fade-in',
