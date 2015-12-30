@@ -10,7 +10,6 @@ angular.module('app')
     hashtag: ''
   };
 
-
   $scope.getLocation = function() {
     LocationFactory.getPosition()
       .then(function(position) {
@@ -20,6 +19,7 @@ angular.module('app')
         console.log('There was an error: ', err);
       });
   };
+
   $scope.takePicture = function() {
     CameraFactory.takePhoto()
       .then(function(imageData) {
@@ -37,7 +37,6 @@ angular.module('app')
     $scope.takePicture();
     $scope.getLocation();
   });
-
 
   $scope.addPost = function() {
     var hashtags = [];
